@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+   
+   <nav>
+      <ul>
+         <li class="brand"><img src="Img/logo.png" alt="Spotify">Spotify</li>
+         <li><a href="home.html">Home</a></li>
+         <li><a href="Aboutus.html">About us</a></li>
+      </ul>
+   </nav>
+   
+   <div class="container">
+      <div class="songlist">
+        <h1 style="font-weight: bolder;">Best of Hindi- Hot Hits Hindi</h1>
+        <p style="font-family:Arial, Helvetica, sans-serif;">Hottest Hindi music that India is listening to</p>
+        <div class="songItemContainer">
+           <div class="songItem">
+              <img src="Covers2/P1/1.jpg" alt="1">
+              <span class="songName">Bhool Bhulaiyaa 3 - Title Track (feat.Pitbull)</span>
+              <span class="songlistplay"><span class="timestamp">03:59 <i id="1" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+            </div>
+            
+            <div class="songItem">
+               <img src="Covers2/P1/2.jpg" alt="1">
+               <span class="songName">Raanjhan (From 'Do Patti')</span>
+               <span class="songlistplay"><span class="timestamp">02:39 <i id="2" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+            </div>
+            
+            <div class="songItem">
+               <img src="Covers2/P1/3.jpg" alt="1">
+               <span class="songName">Apna Bana Le (From 'Bhediya')</span>
+               <span class="songlistplay"><span class="timestamp">03:24 <i id="3" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+            </div>
+            
+            <div class="songItem">
+               <img src="Covers2/P1/4.jpg" alt="1">
+               <audio src="songs2/p1/4.mp3">Ik Vaari Aa (From Raabta)</audio>
+               <span class="songName">Ik Vaari Aa (From Raabta)</span>
+               <span class="songlistplay"><span class="timestamp">03:47 <i id="4" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+
+         <div class="songItem">
+            <img src="Covers2/P1/5.jpg" alt="1">
+            <span class="songName">Humraah (From 'Malang-Unleash The Madness')</span>
+            <span class="songlistplay"><span class="timestamp">03:05 <i id="5" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+         
+         <div class="songItem">
+            <img src="Covers2/P1/6.jpg" alt="1">
+            <span class="songName">Tum Hi Ho (From 'Aashiqui 2')</span>
+            <span class="songlistplay"><span class="timestamp">02:50 <i id="6" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+
+         <div class="songItem">
+            <img src="Covers2/P1/7.jpg" alt="1">
+            <span class="songName">Hua Main (From 'Animal')</span>
+            <span class="songlistplay"><span class="timestamp">02:45 <i id="7" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+
+         <div class="songItem">
+            <img src="Covers2/P1/8.jpg" alt="1">
+            <span class="songName">Dheere Dheere</span>
+            <span class="songlistplay"><span class="timestamp">05:03 <i id="8" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+         
+         <div class="songItem">
+            <img src="Covers2/P1/9.jpg" alt="1">
+            <span class="songName">Kesariya (From 'Brahmastra')</span>
+            <span class="songlistplay"><span class="timestamp">02:52 <i id="9" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+         
+         <div class="songItem">
+            <img src="Covers2/P1/10.jpg" alt="1">
+            <span class="songName">Chaleya (From 'Jawan')</span>
+            <span class="songlistplay"><span class="timestamp">03:08 <i id="10" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+        </div>
+        </div>
+   
+        <div class="songbanner"></div>
+      </div>
+      
+      <div class="bottom">
+         <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+         <div class="icons">
+            <!--fontawesome icons-->
+            <i  class="fa-solid fa-3x fa-backward-step" id="previous"></i>
+            <i  class="fa-solid fa-3x fa-circle-play" id="masterPlay"></i>
+            <i  class="fa-solid fa-3x fa-forward-step" id="next"></i>
+         </div>
+         <div class="songInfo">
+            <img src="Img/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Bhool Bhulaiyaa 3 - Title Track (feat.Pitbull)</span>
+         </div>
+      </div>
+      
+      <script src="script.js"></script>
+      <script src="https://kit.fontawesome.com/0c2f64ba5f.js" crossorigin="anonymous"></script>
+     
+   </body>
+   </html>

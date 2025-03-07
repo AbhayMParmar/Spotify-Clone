@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+<script>
+       console.log("Welcome to Spotify")
+       
+       //initialize the Variables
+      let songIndex = 0;
+      let audioElement = new Audio('songs2/r2/1.mp3');
+      let masterPlay = document.getElementById('masterPlay');
+      let myProgressBar = document.getElementById('myProgressBar');
+      let gif = document.getElementById('gif'); 
+      let masterSongName = document.getElementById('masterSongName');
+      let songItems = Array.from(document.getElementsByClassName('songItem'));
+
+   let songs = [
+    {songName:"MILLIONAIRE SONG : @YoYoHoneySingh | GLORY |",filePath:"songs2/r2/1.mp3",coverPath:"Covers2/P2/1.jpg"},
+    {songName:"Payal (Visualizer): Yo Yo Honey Singh | Paradox | GLORY",filePath:"songs2/r2/2.mp3",coverPath:"Covers2/P2/1.jpg"},
+    {songName:"Brown Rang - Yo Yo Honey Singh India's No.1",filePath:"songs2/r2/3.mp3",coverPath:"Covers2/P2/3.jpg"},
+    {songName:"Dope Shope - Yo Yo Honey Singh and Deep Money",filePath:"songs2/r2/4.mp3",coverPath:"Covers2/P2/4.jpg"},
+    {songName:"Official: Desi Kalakaar Song | Yo Yo Honey Singh ",filePath:"songs2/r2/5.mp3",coverPath:"Covers2/P2/5.jpg"},
+    {songName:"Blue Eyes Full Video Song Yo Yo Honey Singh | Blockbuster Song",filePath:"songs2/r2/6.mp3",coverPath:"Covers2/P2/6.jpg"},
+   ]
+
+   songItems.forEach((element, i)=>{
+      element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+      element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+   })
+//audioElement.play()
+
+//Handle play/pause click
+masterPlay.addEventListener('click', ()=>{   
+         if(audioElement.paused || audioElement.currentTime<=0)
+         {
+              audioElement.play();
+              masterPlay.classList.remove('fa-circle-play');
+              masterPlay.classList.add('fa-circle-pause');
+              gif.style.opacity = 1;
+            }
+         else
+         {
+            audioElement.pause();
+            masterPlay.classList.remove('fa-circle-pause');
+            masterPlay.classList.add('fa-circle-play');
+            gif.style.opacity = 0;
+         }
+})
+//listen to Events
+audioElement.addEventListener('timeupdate',()=>{
+    // update Seekbar
+    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
+    myProgressBar.value = progress;
+   })
+
+   myProgressBar.addEventListener('change', ()=>{
+    audioElement.currentTime = myProgressBar.value *audioElement.duration/100;
+})
+
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-circle-pause');
+        element.classList.add('fa-circle-play');
+      })    
+}  
+    
+
+//Play Button
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{
+       makeAllPlays();
+       songIndex = parseInt(e.target.id);
+       e.target.classList.remove('fa-circle-play');
+       e.target.classList.add('fa-circle-pause');
+       audioElement.src = `songs2/r2/${songIndex}.mp3`;
+       masterSongName.innerText = songs[songIndex].songName;
+       audioElement.currentTime = 0;
+       audioElement.play();
+       gif.style.opacity = 1;
+       masterPlay.classList.remove('fa-circle-play');
+       masterPlay.classList.add('fa-circle-pause');
+      })
+   })
+   //Next Button
+   document.getElementById('next').addEventListener('click', ()=>{
+      if(songIndex>=6){
+         songIndex = 0
+      }
+      else{
+        songIndex += 1;
+    }
+    audioElement.src = `songs2/r2/${songIndex+1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-circle-play');
+    masterPlay.classList.add('fa-circle-pause');
+   })
+// Previous Button
+document.getElementById('previous').addEventListener('click', ()=>{
+   if(songIndex<=0){
+      songIndex = 0
+   }
+   else{
+      songIndex -= 1;
+   }
+   audioElement.src = `songs2/r2/${songIndex+1}.mp3`;
+   masterSongName.innerText = songs[songIndex].songName;
+   audioElement.currentTime = 0;
+   audioElement.play();
+   masterPlay.classList.remove('fa-circle-play');
+   masterPlay.classList.add('fa-circle-pause');
+   
+})
+</script>
+</head>
+<body>
+   <script src="https://kit.fontawesome.com/0c2f64ba5f.js" crossorigin="anonymous"></script>
+
+   
+   <nav>
+      <ul>
+         <li class="brand"><img src="logo.png" alt="Spotify">Spotify</li>
+         <li><a href="home.html">Home</a></li>
+         <li><a href="Aboutus.html">About us</a></li>
+      </ul>
+   </nav>
+   
+   <div class="container">
+      <div class="songlist">
+         <h1 style="font-weight: bolder;">Yo Yo Honey Singh</h1>
+         <p style="font-family:Arial, Helvetica, sans-serif;">Latest Song From YoYo Honey Singh</p>
+         <div class="songItemContainer">
+            <div class="songItem">
+               <img src="Covers2/P2/1.jpg" alt="1">
+               <span class="songName">MILLIONAIRE SONG : @YoYoHoneySingh | GLORY |</span>
+               <span class="songlistplay"><span class="timestamp">03:59 <i id="1" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+            </div>
+            
+           <div class="songItem">
+              <img src="Covers2/P2/1.jpg" alt="1">
+              <span class="songName">Payal (Visualizer): Yo Yo Honey Singh | Paradox | GLORY</span>
+              <span class="songlistplay"><span class="timestamp">02:39 <i id="2" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+            </div>
+            
+            <div class="songItem">
+            <img src="Covers2/P2/3.jpg" alt="1">
+            <span class="songName">Brown Rang - Yo Yo Honey Singh India's No.1</span>
+            <span class="songlistplay"><span class="timestamp">03:24 <i id="3" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+         
+         <div class="songItem">
+            <img src="Covers2/P2/4.jpg" alt="1">
+            <span class="songName">Dope Shope - Yo Yo Honey Singh and Deep Money </span>
+            <span class="songlistplay"><span class="timestamp">03:47 <i id="4" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+
+         <div class="songItem">
+            <img src="Covers2/P2/5.jpg" alt="1">
+            <span class="songName">Official: Desi Kalakaar Song | Yo Yo Honey Singh </span>
+            <span class="songlistplay"><span class="timestamp">03:05 <i id="5" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+         
+         <div class="songItem">
+            <img src="Covers2/P2/6.jpg" alt="1">
+            <span class="songName">Blue Eyes Full Video Song Yo Yo Honey Singh | Blockbuster Song </span>
+            <span class="songlistplay"><span class="timestamp">02:50 <i id="6" class="fa-solid songItemPlay fa-circle-play"></i></span></span>
+         </div>
+   
+        <div class="songbanner"></div>
+        </div>
+      
+      <div class="bottom">
+         <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+         <div class="icons">
+            <!--fontawesome icons-->
+            <i  class="fa-solid fa-3x fa-backward-step" id="previous"></i>
+            <i  class="fa-solid fa-3x fa-circle-play" id="masterPlay"></i>
+            <i  class="fa-solid fa-3x fa-forward-step" id="next"></i>
+         </div>
+         <div class="songInfo">
+            <img src="Img/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">MILLIONAIRE SONG : @YoYoHoneySingh | GLORY |</span>
+         </div>
+      </div>
+      
+     
+   </body>
+   </html>

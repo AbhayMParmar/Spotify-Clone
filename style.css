@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+body{
+    background-color:black;
+}
+antiquewhite
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    font-family: 'Ubantu',sans-serif ;
+
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none ;
+    height:55px;
+    background-color: black;
+    color: white;
+    
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li{
+    padding: 0 12px;
+}
+
+.container{
+    min-height: 65vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round',sans-serif;
+    display: flex;
+    margin: 15px auto;
+    width: 85%;
+    border-radius:12px ;
+    padding: 30px;
+    background-image: url('Img/bg.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+.brand img{
+    width: 44px;
+    padding: 0 8px;
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.bottom{
+    background-color: black;
+    position: sticky;
+    height: 90px;
+    bottom: 0;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.icons{
+    margin-top:10px;
+}
+.icons i{
+    cursor: pointer;
+}
+
+#myProgressBar{
+    width: 90vw;
+    cursor: pointer;
+
+}
+.songItemContainer{
+    margin-top: 74px;
+}
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:34px ;
+}
+
+.songItem img{
+    width: 43px;
+    margin:0 23px; 
+    border-radius: 34px;  
+}
+
+.timestamp{
+    margin: 0 23px;
+}
+
+.timestamp i{
+     cursor: pointer;
+}
+.songInfo{
+    position: absolute;
+    left: 5vw;
+    font-family: 'varela Round',sans-serif;
+}
+
+.songInfo img{
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 20%;
+
+}
+
+.col-sm-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.h1{
+    color: white;
+    font-weight: bolder;
+ }
+ .p{
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+ }
+
+
+
+
+
+
+
+
