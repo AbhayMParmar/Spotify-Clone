@@ -8,7 +8,3 @@ Home Page:-
 
 Best Of Hindi Playlist
 ![image alt](https://github.com/AbhayMParmar/Spotify-Clone/blob/main/img2.png?raw=true)
-
-
-Yo Yo Honey Singh Playlist
-![image alt](https://github.com/AbhayMParmar/Spotify-Clone/blob/main/img3.png?raw=true)
